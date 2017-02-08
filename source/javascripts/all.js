@@ -10,7 +10,6 @@ for (var i = 0; i < colorEls.length; i++) {
 }
 
 function copyToClipboard(el) {
-  console.log('copy');
   var copyInputEl   = document.querySelector('[data-copy-input]');
   var currentFocus  = document.activeElement;
   var copyValue     = '#' + el.getAttribute('data-color');
@@ -50,14 +49,14 @@ function notify(success) {
   }
 
   var notification = document.createElement('div');
-  notification.className = 'js-notify';
-  
+  notification.className = 'js-notify flash';
+
   if (success === true) {
     notification.innerHTML = 'Color copied! ✌️';
-    notification.className += ' flash-success';
+    notification.className += ' flash--success';
   } else {
     notification.innerHTML = 'We couldn\'t copy the color! 😕';
-    notification.className += ' flash-error';
+    notification.className += ' flash--error';
   }
   notifyContainer.prepend(notification);
   setTimeout(function() {

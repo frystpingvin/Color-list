@@ -1,0 +1,11 @@
+@keyframes bounceInRight {
+  0% {
+    transform: translateX(150%);
+  }
+  75% {
+    transform: translateX(-7%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

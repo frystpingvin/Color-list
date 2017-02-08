@@ -4,11 +4,12 @@
   padding-top: $base-spacing;
 }
 
-.color {
+.colors__color {
   position: relative;
   @include span(5);
   padding-top: span(5);
   border-radius: 50%;
+  color: white;
   cursor: pointer;
   transition: all $base-duration $base-timing;
   animation: bounceUp;
@@ -63,18 +64,6 @@
   }
 }
 
-.color.text-color-light {
-  color: white;
-}
-
-@keyframes bounceUp {
-  0% {
-    transform: translateY(100vh);
-  }
-  75% {
-    transform: translateY(-7%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.colors__color--dark-text {
+  color: $base-font-color;
 }

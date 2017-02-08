@@ -1,4 +1,4 @@
-header {
+.site-header {
   left: $base-spacing;
   right: $base-spacing;
   font-size: $large-font-size;
@@ -6,13 +6,15 @@ header {
 
   @include breakpoint($medium-screen) {
     position: fixed;
-    
-    p {
-      float: left;
-    }
+  }
+}
 
-    a {
-      float: right;
-    }
+@include breakpoint($medium-screen) {
+  .site-header__tagline {
+    float: left;
+  }
+
+  .site-header__link {
+    float: right;
   }
 }

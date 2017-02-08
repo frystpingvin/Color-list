@@ -5,8 +5,7 @@
   z-index: $z-index-overlay;
 }
 
-.flash-success,
-.flash-error {
+.flash {
   margin-bottom: $small-spacing;
   padding: $small-spacing;
   font-size: $large-font-size;
@@ -20,22 +19,10 @@
   }
 }
 
-.flash-success {
+.flash--success {
   background-color: $green;
 }
 
-.flash-error {
+.flash--error {
   background-color: $red;
-}
-
-@keyframes bounceInRight {
-  0% {
-    transform: translateX(150%);
-  }
-  75% {
-    transform: translateX(-7%);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
