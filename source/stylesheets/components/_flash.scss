@@ -1,0 +1,41 @@
+.flash-container {
+  position: fixed;
+  top: $base-spacing*2;
+  right: $base-spacing;
+  z-index: $z-index-overlay;
+}
+
+.flash-success,
+.flash-error {
+  margin-bottom: $small-spacing;
+  padding: $small-spacing;
+  font-size: $large-font-size;
+  color: white;
+  border-radius: $base-border-radius;
+  animation: bounceInRight;
+  animation-duration: $base-duration;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.flash-success {
+  background-color: $green;
+}
+
+.flash-error {
+  background-color: $red;
+}
+
+@keyframes bounceInRight {
+  0% {
+    transform: translateX(150%);
+  }
+  75% {
+    transform: translateX(-7%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

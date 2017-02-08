@@ -1,0 +1,15 @@
+colors:
+  - hex: '5215A0'
+    textColor: light
+  - hex: '643579'
+    textColor: light
+  - hex: 'FC5B1F'
+    textColor: light
+  - hex: '0074C8'
+    textColor: light
+  - hex: '27AE60'
+    textColor: light
+  - hex: 'E74C3C'
+    textColor: light
+  - hex: 'FFF042'
+    textColor: dark

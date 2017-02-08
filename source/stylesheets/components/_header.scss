@@ -1,0 +1,18 @@
+header {
+  left: $base-spacing;
+  right: $base-spacing;
+  font-size: $large-font-size;
+  z-index: $z-index-2;
+
+  @include breakpoint($medium-screen) {
+    position: fixed;
+    
+    p {
+      float: left;
+    }
+
+    a {
+      float: right;
+    }
+  }
+}

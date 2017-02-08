@@ -1,0 +1,15 @@
+---
+title: Color List
+---
+
+<header>
+  <p>A collection of colors. Clicking the colors will copy the HEX code.</p>
+  <a target="_blank" href="http://samuellie.se">samuellie.se</a>
+</header>
+
+<main class="colors">
+  <% sorted_colors = data.colorlist.colors.sort_by { |color| color.hex } %>
+  <% sorted_colors.each do |color| %>
+    <div class="color text-color-<%= color.textColor %>" style="background-color:#<%= color.hex %>" data-color="<%= color.hex %>"></div>
+  <% end %>
+</main>

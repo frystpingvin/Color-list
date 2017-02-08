@@ -1,0 +1,80 @@
+.colors {
+  @include clearfix;
+  background-color: white;
+  padding-top: $base-spacing;
+}
+
+.color {
+  position: relative;
+  @include span(5);
+  padding-top: span(5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all $base-duration $base-timing;
+  animation: bounceUp;
+  animation-duration: 500ms;
+
+  &:nth-child(5n+3) {
+    @include span(5 last);
+  }
+  &:nth-child(5n+4) {
+    @include push(2.5);
+  }
+
+  @include breakpoint($medium-screen) {
+    @include span(3);
+    padding-top: span(3);
+
+    &:nth-child(5n+3) {
+      @include span(3);
+    }
+    &:nth-child(5n+4) {
+      @include push(0);
+    }
+    &:nth-child(9n+5) {
+      @include span(3 last);
+    }
+    &:nth-child(9n+6) {
+      @include push(1.5);
+    }
+  }
+
+  &:hover {
+    opacity: 0.5;
+    transform: scale(1.1);
+
+    &:before {
+      content: "Click me!";
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+  }
+  &:active {
+    transform: scale(1.025);
+  }
+
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i}00ms;
+    }
+  }
+}
+
+.color.text-color-light {
+  color: white;
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(100vh);
+  }
+  75% {
+    transform: translateY(-7%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
