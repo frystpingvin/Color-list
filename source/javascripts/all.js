@@ -21,6 +21,7 @@ function copyToClipboard(el) {
   var success;
   try {
     success = document.execCommand('copy');
+    copyInputEl.blur();
   } catch (e) {
     success = false;
   }

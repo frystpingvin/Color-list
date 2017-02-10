@@ -9,7 +9,7 @@ $small-spacing: $base-spacing / 2;
 // Typography
 $base-font-family: 'Karla', sans-serif;
 $base-font-size: 1em;
-$large-font-size: 1.25em;
+$large-font-size: 1.35em;
 
 // Colors
 $light-gray: #F4F4F4;
@@ -20,9 +20,13 @@ $red: #e74c3c;
 $base-font-color: $dark-gray;
 
 // Z-indexes
+$z-index-negative: -1;
 $z-index-1: 1;
 $z-index-2: 9;
 $z-index-overlay: 999;
+
+// Other sizes
+$container-max-width: 1200px;
 
 // Borders
 $base-border-radius: 6px;

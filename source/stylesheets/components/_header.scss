@@ -1,20 +1,15 @@
 .site-header {
-  left: $base-spacing;
-  right: $base-spacing;
-  font-size: $large-font-size;
-  z-index: $z-index-2;
-
-  @include breakpoint($medium-screen) {
-    position: fixed;
-  }
+  margin: $base-spacing;
 }
 
-@include breakpoint($medium-screen) {
-  .site-header__tagline {
-    float: left;
-  }
+.site-header__logo {
+  display: block;
+  max-height: 125px;
+  margin: 0 auto $base-spacing*2 auto;
+}
 
-  .site-header__link {
-    float: right;
-  }
+.site-header__tagline {
+  font-size: $large-font-size;
+  text-align: center;
+  line-height: 1.35;
 }

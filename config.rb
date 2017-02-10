@@ -18,6 +18,9 @@ page '/*.txt', layout: false
 
 # General configuration
 
+# Turn this on if you want to make your url's prettier, without the .html
+activate :directory_indexes
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
@@ -33,6 +36,10 @@ end
 #     "Helping"
 #   end
 # end
+
+# Use relative URLs
+activate :relative_assets
+set :relative_links, true
 
 # Build-specific configuration
 configure :build do

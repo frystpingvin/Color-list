@@ -6,23 +6,34 @@
 }
 
 .flash {
+  position: relative;
   margin-bottom: $small-spacing;
   padding: $small-spacing;
   font-size: $large-font-size;
   color: white;
-  border-radius: $base-border-radius;
   animation: bounceInRight;
   animation-duration: $base-duration;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: skewX(-12deg);
+    z-index: $z-index-negative;
+  }
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-.flash--success {
+.flash--success:before {
   background-color: $green;
 }
 
-.flash--error {
+.flash--error:before {
   background-color: $red;
 }

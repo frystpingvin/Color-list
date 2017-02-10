@@ -1,11 +1,11 @@
 @keyframes bounceInRight {
   0% {
-    transform: translateX(150%);
+    transform: translateX(150%) skewX(-25deg);
   }
   75% {
-    transform: translateX(-7%);
+    transform: translateX(-7%) skewX(10deg);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0) skewX(-12deg);
   }
 }
