@@ -1,9 +1,12 @@
 .colors {
   @include clearfix;
   background-color: white;
-  padding-top: $base-spacing;
   max-width: $container-max-width;
   margin: 0 auto;
+
+  @include breakpoint($medium-screen) {
+    padding-top: $base-spacing;
+  }
 }
 
 .colors__color {
@@ -55,13 +58,16 @@
     opacity: 0.5;
     transform: scale(1.1);
 
-    &:before {
-      content: "Click me!";
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      transform: translateY(-50%);
-      text-align: center;
+    // to avoid "double tap" issue on smaller (probably touch) devices
+    @include breakpoint($large-screen) {
+      &:before {
+        content: "Click me!";
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        text-align: center;
+      }
     }
   }
   &:active {

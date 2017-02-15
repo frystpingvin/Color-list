@@ -1,4 +1,5 @@
 // This is where it all goes :)
+// RUN THROUGH COLORS AND ADD CLICK EVENT LISTENER
 var colorEls = document.querySelectorAll('[data-color]');
 
 for (var i = 0; i < colorEls.length; i++) {
@@ -9,19 +10,21 @@ for (var i = 0; i < colorEls.length; i++) {
   });
 }
 
+
+// COPY TO CLIPBOARD
 function copyToClipboard(el) {
-  var copyInputEl   = document.querySelector('[data-copy-input]');
   var currentFocus  = document.activeElement;
+  var fakeInput     = createFakeInput();
   var copyValue     = '#' + el.getAttribute('data-color');
 
-  copyInputEl.value = copyValue;
-  copyInputEl.focus();
-  copyInputEl.setSelectionRange(0, copyInputEl.value.length);
+  fakeInput.value = copyValue;
+  fakeInput.focus();
+  fakeInput.setSelectionRange(0, fakeInput.value.length);
 
   var success;
   try {
     success = document.execCommand('copy');
-    copyInputEl.blur();
+    fakeInput.blur();
   } catch (e) {
     success = false;
   }
@@ -30,11 +33,30 @@ function copyToClipboard(el) {
     currentFocus.focus();
   }
 
-  copyInputEl.textContent = '';
+  clearEl(fakeInput);
+
   notify(success);
   return success;
 }
 
+
+// CREATE FAKE ELEMENT
+function createFakeInput() {
+  var fakeInput = document.createElement('textarea');
+  // Prevent zooming on iOS
+  fakeInput.style.fontSize = '12pt';
+  fakeInput.style.border = '0';
+  fakeInput.style.padding = '0';
+  fakeInput.style.margin = '0';
+  fakeInput.style.position = 'fixed';
+  fakeInput.style.right = '-9999px';
+  fakeInput.setAttribute('readonly', '');
+  document.body.appendChild(fakeInput);
+  return fakeInput;
+}
+
+
+// NOTIFY
 function notify(success) {
   var showDuration = 1500;
   // look for container
@@ -60,15 +82,26 @@ function notify(success) {
     notification.className += ' flash--error';
   }
   notifyContainer.prepend(notification);
+
+  // Clear notification
   setTimeout(function() {
-    clearNotification(notification);
+    clearEl(notification);
+
+    // if notification container is empty, remove it.
+    if (notifyContainer.innerHTML === "") {
+      clearEl(notifyContainer);
+    }
   }, showDuration);
 }
 
-function clearNotification(el) {
+
+// CLEAR ELEMENT
+function clearEl(el) {
   el.parentNode.removeChild(el);
 }
 
+
+// PROTOTYPE FOR PREPENDING
 HTMLElement = typeof(HTMLElement) != 'undefiend' ? HTMLElement : Element;
 HTMLElement.prototype.prepend = function(element) {
   if (this.firstChild) {

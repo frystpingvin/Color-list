@@ -1,11 +1,17 @@
-.site-header {
-  margin: $base-spacing;
+@include breakpoint($medium-screen) {
+  .site-header {
+    margin: $base-spacing;
+  }
 }
 
 .site-header__logo {
   display: block;
   max-height: 125px;
-  margin: 0 auto $base-spacing*2 auto;
+  margin: 0 auto $base-spacing auto;
+
+  @include breakpoint($medium-screen) {
+    margin-bottom: $base-spacing*2;
+  }
 }
 
 .site-header__tagline {
