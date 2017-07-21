@@ -1,9 +1,9 @@
 colors:
-  - hex: '5215A0'
+  - hex: '5215A0' # Marknadsinformation
   - hex: '643579'
-  - hex: 'FC5B1F'
-  - hex: '0074C8'
+  - hex: 'FC5B1F' # Fusion Associates
+  - hex: '0074C8' # Fusion Associates
   - hex: '27AE60'
-  - hex: 'E74C3C'
+  - hex: 'E74C3C' # Hubbster
   - hex: 'FFF042'
     textColor: dark
